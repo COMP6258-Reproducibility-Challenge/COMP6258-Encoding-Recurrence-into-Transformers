@@ -1,4 +1,4 @@
-# Reimplementation of the Informer model by encoding recurrence via the RSA module
+# Reimplementation of the RSA-Informer model by encoding recurrence via the RSA module
 
 Original Informer README for reference:
 # Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting (AAAI'21 Best Paper)
