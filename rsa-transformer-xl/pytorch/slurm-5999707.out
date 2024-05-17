@@ -1,0 +1,118 @@
+Running SLURM prolog script on pink57.cluster.local
+===============================================================================
+Job started on Fri May 17 02:35:15 BST 2024
+Job ID          : 5999707
+Job name        : run_enwik8_large.sh
+WorkDir         : /mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch
+Command         : /mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch/run_enwik8_large.sh
+Partition       : lyceum
+Num hosts       : 1
+Num cores       : 8
+Num of tasks    : 1
+Hosts allocated : pink57
+Job Output Follows ...
+===============================================================================
+Loading cached dataset...
+====================================================================================================
+    - data : ../data/enwik8/
+    - dataset : enwik8
+    - n_layer : 24
+    - n_head : 8
+    - d_head : 128
+    - d_embed : 1024
+    - d_model : 1024
+    - d_inner : 3072
+    - dropout : 0.15
+    - dropatt : 0.15
+    - init : normal
+    - emb_init : normal
+    - init_range : 0.1
+    - emb_init_range : 0.01
+    - init_std : 0.02
+    - proj_init_std : 0.01
+    - optim : adam
+    - lr : 0.00025
+    - mom : 0.0
+    - scheduler : cosine
+    - warmup_step : 4000
+    - decay_rate : 0.5
+    - lr_min : 0.0
+    - clip : 0.25
+    - clip_nonemb : False
+    - max_step : 400000
+    - batch_size : 64
+    - batch_chunk : 1
+    - tgt_len : 768
+    - eval_tgt_len : 128
+    - ext_len : 0
+    - mem_len : 768
+    - not_tied : False
+    - seed : 1111
+    - cuda : True
+    - adaptive : False
+    - div_val : 1
+    - pre_lnorm : False
+    - varlen : False
+    - multi_gpu : True
+    - log_interval : 200
+    - eval_interval : 4000
+    - work_dir : LM-TFM
+    - restart : False
+    - restart_dir : 
+    - debug : False
+    - same_length : False
+    - attn_type : 0
+    - clamp_len : -1
+    - eta_min : 0.0
+    - gpu0_bsz : 0
+    - max_eval_steps : -1
+    - sample_softmax : -1
+    - patience : 0
+    - finetune_v2 : False
+    - finetune_v3 : False
+    - fp16 : False
+    - static_loss_scale : 1
+    - dynamic_loss_scale : False
+    - n_rsa_head : 4
+    - k_rem_indexes : None
+    - dilated_factors : None
+    - iridis : False
+    - mu_init : 1
+    - tied : True
+    - n_token : 204
+    - n_all_param : 277231820
+    - n_nonemb_param : 277020672
+====================================================================================================
+#params = 277231820
+#non emb params = 277020672
+batch: 0
+/mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch/mem_transformer.py:463: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525496686/work/aten/src/ATen/native/TensorAdvancedIndexing.cpp:1646.)
+  attn_mask[:,:,:,None], -float('inf')).type_as(attn_score)
+/tmp/slurmd/job5999707/slurm_script: line 36:  8949 Killed                  python -u train.py --cuda --data ../data/enwik8/ --dataset enwik8 --n_layer 24 --d_model 1024 --n_head 8 --d_head 128 --d_inner 3072 --dropout 0.15 --dropatt 0.15 --optim adam --lr 0.00025 --warmup_step 4000 --max_step 400000 --tgt_len 768 --mem_len 768 --eval_tgt_len 128 --batch_size 64 --multi_gpu --gpu0_bsz 0 ${@:2}
+usage: eval.py [-h] [--data DATA] [--dataset {wt103,lm1b,enwik8,text8}]
+               [--split {all,valid,test}] [--batch_size BATCH_SIZE]
+               [--tgt_len TGT_LEN] [--ext_len EXT_LEN] [--mem_len MEM_LEN]
+               [--clamp_len CLAMP_LEN] [--cuda] --work_dir WORK_DIR [--no_log]
+               [--same_length]
+eval.py: error: the following arguments are required: --work_dir
+/tmp/slurmd/job5999707/slurm_script: line 51: f: command not found
+==============================================================================
+Running epilogue script on pink57.
+
+Submit time  : 2024-05-17T02:35:14
+Start time   : 2024-05-17T02:35:15
+End time     : 2024-05-17T02:41:28
+Elapsed time : 00:06:13 (Timelimit=08:00:00)
+
+Job ID: 5999707
+Cluster: i5
+User/Group: rc3g20/fp
+State: FAILED (exit code 127)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:15:57
+CPU Efficiency: 32.07% of 00:49:44 core-walltime
+Job Wall-clock time: 00:06:13
+Memory Utilized: 81.52 GB
+Memory Efficiency: 0.00% of 16.00 B
+

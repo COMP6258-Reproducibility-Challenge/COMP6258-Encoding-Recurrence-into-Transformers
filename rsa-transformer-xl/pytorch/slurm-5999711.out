@@ -1,0 +1,843 @@
+Running SLURM prolog script on pink57.cluster.local
+===============================================================================
+Job started on Fri May 17 02:41:46 BST 2024
+Job ID          : 5999711
+Job name        : run_text8_base.sh
+WorkDir         : /mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch
+Command         : /mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch/run_text8_base.sh
+Partition       : lyceum
+Num hosts       : 1
+Num cores       : 8
+Num of tasks    : 1
+Hosts allocated : pink57
+Job Output Follows ...
+===============================================================================
+Producing dataset text8...
+Path: ../data/text8/train.txt
+Path: ../data/text8/valid.txt
+Path: ../data/text8/test.txt
+building vocab with min_freq=0, max_size=None
+final vocab size 27 from 27 unique tokens
+====================================================================================================
+    - data : ../data/text8/
+    - dataset : text8
+    - n_layer : 14
+    - n_head : 8
+    - d_head : 64
+    - d_embed : 512
+    - d_model : 512
+    - d_inner : 2048
+    - dropout : 0.1
+    - dropatt : 0.0
+    - init : normal
+    - emb_init : normal
+    - init_range : 0.1
+    - emb_init_range : 0.01
+    - init_std : 0.02
+    - proj_init_std : 0.01
+    - optim : adam
+    - lr : 0.00025
+    - mom : 0.0
+    - scheduler : cosine
+    - warmup_step : 0
+    - decay_rate : 0.5
+    - lr_min : 0.0
+    - clip : 0.25
+    - clip_nonemb : False
+    - max_step : 40000
+    - batch_size : 22
+    - batch_chunk : 1
+    - tgt_len : 512
+    - eval_tgt_len : 128
+    - ext_len : 0
+    - mem_len : 512
+    - not_tied : False
+    - seed : 1111
+    - cuda : True
+    - adaptive : False
+    - div_val : 1
+    - pre_lnorm : False
+    - varlen : False
+    - multi_gpu : True
+    - log_interval : 200
+    - eval_interval : 4000
+    - work_dir : LM-TFM
+    - restart : False
+    - restart_dir : 
+    - debug : False
+    - same_length : False
+    - attn_type : 0
+    - clamp_len : -1
+    - eta_min : 0.0
+    - gpu0_bsz : 4
+    - max_eval_steps : -1
+    - sample_softmax : -1
+    - patience : 0
+    - finetune_v2 : False
+    - finetune_v3 : False
+    - fp16 : False
+    - static_loss_scale : 1
+    - dynamic_loss_scale : False
+    - n_rsa_head : 4
+    - k_rem_indexes : None
+    - dilated_factors : None
+    - iridis : False
+    - mu_init : 1
+    - tied : True
+    - n_token : 27
+    - n_all_param : 47789595
+    - n_nonemb_param : 47774720
+====================================================================================================
+#params = 47789595
+#non emb params = 47774720
+batch: 0
+/mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch/mem_transformer.py:463: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525496686/work/aten/src/ATen/native/TensorAdvancedIndexing.cpp:1646.)
+  attn_mask[:,:,:,None], -float('inf')).type_as(attn_score)
+/lyceum/rc3g20/.conda/envs/transformer-xl/lib/python3.7/site-packages/torch/autograd/__init__.py:199: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525496686/work/aten/src/ATen/native/TensorAdvancedIndexing.cpp:1646.)
+  allow_unreachable=True, accumulate_grad=True)  # Calls into the C++ engine to run the backward pass
+train_loss: 4.705416202545166
+/lyceum/rc3g20/.conda/envs/transformer-xl/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:163: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+batch: 1
+train_loss: 7.7124693393707275
+batch: 2
+train_loss: 10.651489019393921
+batch: 3
+train_loss: 13.59921646118164
+batch: 4
+train_loss: 16.497248649597168
+batch: 5
+train_loss: 19.37884211540222
+batch: 6
+train_loss: 22.269158363342285
+batch: 7
+train_loss: 25.147623538970947
+batch: 8
+train_loss: 28.02477788925171
+batch: 9
+train_loss: 30.911035299301147
+batch: 10
+train_loss: 33.79125761985779
+batch: 11
+train_loss: 36.67068672180176
+batch: 12
+train_loss: 39.555420875549316
+batch: 13
+train_loss: 42.42558288574219
+batch: 14
+train_loss: 45.3107168674469
+batch: 15
+train_loss: 48.195250511169434
+batch: 16
+train_loss: 51.07080006599426
+batch: 17
+train_loss: 53.94939398765564
+batch: 18
+train_loss: 56.81838059425354
+batch: 19
+train_loss: 59.70918154716492
+batch: 20
+train_loss: 62.58373475074768
+batch: 21
+train_loss: 65.45583701133728
+batch: 22
+train_loss: 68.33457612991333
+batch: 23
+train_loss: 71.21637225151062
+batch: 24
+train_loss: 74.09768390655518
+batch: 25
+train_loss: 76.97155404090881
+batch: 26
+train_loss: 79.8321418762207
+batch: 27
+train_loss: 82.69887256622314
+batch: 28
+train_loss: 85.56055784225464
+batch: 29
+train_loss: 88.38695883750916
+batch: 30
+train_loss: 91.18616914749146
+batch: 31
+train_loss: 93.90234041213989
+batch: 32
+train_loss: 96.84461665153503
+batch: 33
+train_loss: 99.57283926010132
+batch: 34
+train_loss: 102.2176125049591
+batch: 35
+train_loss: 104.87191152572632
+batch: 36
+train_loss: 107.45597863197327
+batch: 37
+train_loss: 110.03027129173279
+batch: 38
+train_loss: 112.59804511070251
+batch: 39
+train_loss: 115.14547872543335
+batch: 40
+train_loss: 117.67814755439758
+batch: 41
+train_loss: 120.20800995826721
+batch: 42
+train_loss: 122.70421147346497
+batch: 43
+train_loss: 125.1891667842865
+batch: 44
+train_loss: 127.69309973716736
+batch: 45
+train_loss: 130.20208501815796
+batch: 46
+train_loss: 132.68826031684875
+batch: 47
+train_loss: 135.13969612121582
+batch: 48
+train_loss: 137.6139485836029
+batch: 49
+train_loss: 140.05266284942627
+batch: 50
+train_loss: 142.48516821861267
+batch: 51
+train_loss: 144.92762422561646
+batch: 52
+train_loss: 147.3965036869049
+batch: 53
+train_loss: 149.86071276664734
+batch: 54
+train_loss: 152.32833075523376
+batch: 55
+train_loss: 154.7913794517517
+batch: 56
+train_loss: 157.24014711380005
+batch: 57
+train_loss: 159.67517733573914
+batch: 58
+train_loss: 162.09764671325684
+batch: 59
+train_loss: 164.54624962806702
+batch: 60
+train_loss: 166.96865844726562
+batch: 61
+train_loss: 169.38471293449402
+batch: 62
+train_loss: 171.82215785980225
+batch: 63
+train_loss: 174.25489044189453
+batch: 64
+train_loss: 176.666428565979
+batch: 65
+train_loss: 179.0712366104126
+batch: 66
+train_loss: 181.49039483070374
+batch: 67
+train_loss: 183.94033026695251
+batch: 68
+train_loss: 186.35564303398132
+batch: 69
+train_loss: 188.7824468612671
+batch: 70
+train_loss: 191.20937538146973
+batch: 71
+train_loss: 193.64480423927307
+batch: 72
+train_loss: 196.06563711166382
+batch: 73
+train_loss: 198.50263714790344
+batch: 74
+train_loss: 200.90752124786377
+batch: 75
+train_loss: 203.30410957336426
+batch: 76
+train_loss: 205.73355436325073
+batch: 77
+train_loss: 208.16413068771362
+batch: 78
+train_loss: 210.5585641860962
+batch: 79
+train_loss: 212.95181250572205
+batch: 80
+train_loss: 215.33256936073303
+batch: 81
+train_loss: 217.7210705280304
+batch: 82
+train_loss: 220.12387871742249
+batch: 83
+train_loss: 222.53678441047668
+batch: 84
+train_loss: 224.96000361442566
+batch: 85
+train_loss: 227.39131379127502
+batch: 86
+train_loss: 229.83143186569214
+batch: 87
+train_loss: 232.2660312652588
+batch: 88
+train_loss: 234.68239855766296
+batch: 89
+train_loss: 237.10165572166443
+batch: 90
+train_loss: 239.53767466545105
+batch: 91
+train_loss: 241.9581916332245
+batch: 92
+train_loss: 244.3858766555786
+batch: 93
+train_loss: 246.79194736480713
+batch: 94
+train_loss: 249.18620109558105
+batch: 95
+train_loss: 251.57874584197998
+batch: 96
+train_loss: 253.95769929885864
+batch: 97
+train_loss: 256.37711477279663
+batch: 98
+train_loss: 258.79679775238037
+batch: 99
+train_loss: 261.2361857891083
+batch: 100
+train_loss: 263.6439161300659
+batch: 101
+train_loss: 266.0684883594513
+batch: 102
+train_loss: 268.49521374702454
+batch: 103
+train_loss: 270.89735770225525
+batch: 104
+train_loss: 273.2904336452484
+batch: 105
+train_loss: 275.6776225566864
+batch: 106
+train_loss: 278.06886053085327
+batch: 107
+train_loss: 280.4740204811096
+batch: 108
+train_loss: 282.8712582588196
+batch: 109
+train_loss: 285.271279335022
+batch: 110
+train_loss: 287.6665987968445
+batch: 111
+train_loss: 290.05831503868103
+batch: 112
+train_loss: 292.4598970413208
+batch: 113
+train_loss: 294.8459167480469
+batch: 114
+train_loss: 297.2104208469391
+batch: 115
+train_loss: 299.57408022880554
+batch: 116
+train_loss: 301.96820425987244
+batch: 117
+train_loss: 304.3367030620575
+batch: 118
+train_loss: 306.6860704421997
+batch: 119
+train_loss: 309.05003094673157
+batch: 120
+train_loss: 311.4118320941925
+batch: 121
+train_loss: 313.76485538482666
+batch: 122
+train_loss: 316.0978717803955
+batch: 123
+train_loss: 318.43592381477356
+batch: 124
+train_loss: 320.7493975162506
+batch: 125
+train_loss: 323.06283712387085
+batch: 126
+train_loss: 325.4328382015228
+batch: 127
+train_loss: 327.76809573173523
+batch: 128
+train_loss: 330.0745372772217
+batch: 129
+train_loss: 332.3312020301819
+batch: 130
+train_loss: 334.58370304107666
+batch: 131
+train_loss: 336.8668999671936
+batch: 132
+train_loss: 339.11130380630493
+batch: 133
+train_loss: 341.35409235954285
+batch: 134
+train_loss: 343.5525369644165
+batch: 135
+train_loss: 345.73171734809875
+batch: 136
+train_loss: 347.916766166687
+batch: 137
+train_loss: 350.13739585876465
+batch: 138
+train_loss: 352.34314036369324
+batch: 139
+train_loss: 354.53919887542725
+batch: 140
+train_loss: 356.7519702911377
+batch: 141
+train_loss: 358.90932512283325
+batch: 142
+train_loss: 361.05518889427185
+batch: 143
+train_loss: 363.18646454811096
+batch: 144
+train_loss: 365.33599281311035
+batch: 145
+train_loss: 367.4572865962982
+batch: 146
+train_loss: 369.6094915866852
+batch: 147
+train_loss: 371.7970700263977
+batch: 148
+train_loss: 373.9103536605835
+batch: 149
+train_loss: 376.00031089782715
+batch: 150
+train_loss: 378.0791254043579
+batch: 151
+train_loss: 380.1814661026001
+batch: 152
+train_loss: 382.25789761543274
+batch: 153
+train_loss: 384.3124361038208
+batch: 154
+train_loss: 386.38935685157776
+batch: 155
+train_loss: 388.4730007648468
+batch: 156
+train_loss: 390.5491065979004
+batch: 157
+train_loss: 392.63824701309204
+batch: 158
+train_loss: 394.6625213623047
+batch: 159
+train_loss: 396.7263276576996
+batch: 160
+train_loss: 398.73791766166687
+batch: 161
+train_loss: 400.6965594291687
+batch: 162
+train_loss: 402.6828476190567
+batch: 163
+train_loss: 404.6918853521347
+batch: 164
+train_loss: 406.6927305459976
+batch: 165
+train_loss: 408.7188092470169
+batch: 166
+train_loss: 410.70579743385315
+batch: 167
+train_loss: 412.7269558906555
+batch: 168
+train_loss: 414.7067050933838
+batch: 169
+train_loss: 416.71564841270447
+batch: 170
+train_loss: 418.68776309490204
+batch: 171
+train_loss: 420.6739935874939
+batch: 172
+train_loss: 422.6581367254257
+batch: 173
+train_loss: 424.5745288133621
+batch: 174
+train_loss: 426.5846537351608
+batch: 175
+train_loss: 428.5179594755173
+batch: 176
+train_loss: 430.4491785764694
+batch: 177
+train_loss: 432.36013984680176
+batch: 178
+train_loss: 434.3087544441223
+batch: 179
+train_loss: 436.2478824853897
+batch: 180
+train_loss: 438.1778918504715
+batch: 181
+train_loss: 440.0683317184448
+batch: 182
+train_loss: 441.97970139980316
+batch: 183
+train_loss: 443.89449751377106
+batch: 184
+train_loss: 445.83654499053955
+batch: 185
+train_loss: 447.7205719947815
+batch: 186
+train_loss: 449.5817131996155
+batch: 187
+train_loss: 451.47930240631104
+batch: 188
+train_loss: 453.329784989357
+batch: 189
+train_loss: 455.1733605861664
+batch: 190
+train_loss: 457.00635731220245
+batch: 191
+train_loss: 458.8311516046524
+batch: 192
+train_loss: 460.6600764989853
+batch: 193
+train_loss: 462.4747203588486
+batch: 194
+train_loss: 464.30464696884155
+batch: 195
+train_loss: 466.16352117061615
+batch: 196
+train_loss: 467.9989596605301
+batch: 197
+train_loss: 469.85763132572174
+batch: 198
+train_loss: 471.70364797115326
+batch: 199
+train_loss: 473.5561556816101
+| epoch   1 step      200 |    200 batches | lr 0.00025 | ms/batch 60090.49 | loss  2.37 | bpc   3.41599
+batch: 200
+train_loss: 1.8436909914016724
+batch: 201
+train_loss: 3.666552424430847
+batch: 202
+train_loss: 5.401657462120056
+batch: 203
+train_loss: 7.232855558395386
+batch: 204
+train_loss: 9.0551016330719
+batch: 205
+train_loss: 10.85227620601654
+batch: 206
+train_loss: 12.668031334877014
+batch: 207
+train_loss: 14.48250150680542
+batch: 208
+train_loss: 16.317865252494812
+batch: 209
+train_loss: 18.1828693151474
+batch: 210
+train_loss: 20.022417902946472
+batch: 211
+train_loss: 21.81929326057434
+batch: 212
+train_loss: 23.57724618911743
+batch: 213
+train_loss: 25.313549160957336
+batch: 214
+train_loss: 27.08401107788086
+batch: 215
+train_loss: 28.89858889579773
+batch: 216
+train_loss: 30.725269198417664
+batch: 217
+train_loss: 32.49872004985809
+batch: 218
+train_loss: 34.28720164299011
+batch: 219
+train_loss: 36.082241892814636
+batch: 220
+train_loss: 37.83974015712738
+batch: 221
+train_loss: 39.64062559604645
+batch: 222
+train_loss: 41.45773386955261
+batch: 223
+train_loss: 43.22475504875183
+batch: 224
+train_loss: 44.99703621864319
+batch: 225
+train_loss: 46.75418412685394
+batch: 226
+train_loss: 48.57354295253754
+batch: 227
+train_loss: 50.33856725692749
+batch: 228
+train_loss: 52.06547224521637
+batch: 229
+train_loss: 53.807263016700745
+batch: 230
+train_loss: 55.566917181015015
+batch: 231
+train_loss: 57.42888283729553
+batch: 232
+train_loss: 59.280253410339355
+batch: 233
+train_loss: 61.10249984264374
+batch: 234
+train_loss: 62.8863388299942
+batch: 235
+train_loss: 64.74638760089874
+batch: 236
+train_loss: 66.54409420490265
+batch: 237
+train_loss: 68.31332564353943
+batch: 238
+train_loss: 70.10536813735962
+batch: 239
+train_loss: 71.91968059539795
+batch: 240
+train_loss: 73.73843622207642
+batch: 241
+train_loss: 75.5109316110611
+batch: 242
+train_loss: 77.29088795185089
+batch: 243
+train_loss: 79.08303225040436
+batch: 244
+train_loss: 80.86654782295227
+batch: 245
+train_loss: 82.63567662239075
+batch: 246
+train_loss: 84.39867126941681
+batch: 247
+train_loss: 86.11033248901367
+batch: 248
+train_loss: 87.88484609127045
+batch: 249
+train_loss: 89.6539626121521
+batch: 250
+train_loss: 91.40761137008667
+batch: 251
+train_loss: 93.13229942321777
+batch: 252
+train_loss: 94.94834446907043
+batch: 253
+train_loss: 96.73622941970825
+batch: 254
+train_loss: 98.51547527313232
+batch: 255
+train_loss: 100.29000198841095
+batch: 256
+train_loss: 102.04632818698883
+batch: 257
+train_loss: 103.78550052642822
+batch: 258
+train_loss: 105.58463847637177
+batch: 259
+train_loss: 107.37255883216858
+batch: 260
+train_loss: 109.11092102527618
+batch: 261
+train_loss: 110.84789311885834
+batch: 262
+train_loss: 112.56929886341095
+batch: 263
+train_loss: 114.259104013443
+batch: 264
+train_loss: 115.95591378211975
+batch: 265
+train_loss: 117.69391763210297
+batch: 266
+train_loss: 119.4673787355423
+batch: 267
+train_loss: 121.2081390619278
+batch: 268
+train_loss: 122.92083513736725
+batch: 269
+train_loss: 124.6292941570282
+batch: 270
+train_loss: 126.38529205322266
+batch: 271
+train_loss: 128.05738258361816
+batch: 272
+train_loss: 129.74460184574127
+batch: 273
+train_loss: 131.46294057369232
+batch: 274
+train_loss: 133.13104009628296
+batch: 275
+train_loss: 134.80422019958496
+batch: 276
+train_loss: 136.4844822883606
+batch: 277
+train_loss: 138.1671530008316
+batch: 278
+train_loss: 139.87531518936157
+batch: 279
+train_loss: 141.51118409633636
+batch: 280
+train_loss: 143.1942880153656
+batch: 281
+train_loss: 144.83632791042328
+batch: 282
+train_loss: 146.49069046974182
+batch: 283
+train_loss: 148.19864869117737
+batch: 284
+train_loss: 149.80023908615112
+batch: 285
+train_loss: 151.48661828041077
+batch: 286
+train_loss: 153.13572561740875
+batch: 287
+train_loss: 154.7423609495163
+batch: 288
+train_loss: 156.38302099704742
+batch: 289
+train_loss: 158.04266595840454
+batch: 290
+train_loss: 159.65311324596405
+batch: 291
+train_loss: 161.31745600700378
+batch: 292
+train_loss: 162.94966995716095
+batch: 293
+train_loss: 164.52960741519928
+batch: 294
+train_loss: 166.16133391857147
+batch: 295
+train_loss: 167.8009170293808
+batch: 296
+train_loss: 169.39833855628967
+batch: 297
+train_loss: 171.00564217567444
+batch: 298
+train_loss: 172.58695936203003
+batch: 299
+train_loss: 174.18701803684235
+batch: 300
+train_loss: 175.82335567474365
+batch: 301
+train_loss: 177.41412436962128
+batch: 302
+train_loss: 179.02914011478424
+batch: 303
+train_loss: 180.56567192077637
+batch: 304
+train_loss: 182.09738171100616
+batch: 305
+train_loss: 183.71081137657166
+batch: 306
+train_loss: 185.3121713399887
+batch: 307
+train_loss: 186.92308592796326
+batch: 308
+train_loss: 188.49147617816925
+batch: 309
+train_loss: 190.0178780555725
+batch: 310
+train_loss: 191.56886065006256
+batch: 311
+train_loss: 193.1209203004837
+batch: 312
+train_loss: 194.69284641742706
+batch: 313
+train_loss: 196.2997852563858
+batch: 314
+train_loss: 197.94078409671783
+batch: 315
+train_loss: 199.51410460472107
+batch: 316
+train_loss: 201.11223459243774
+batch: 317
+train_loss: 202.65274131298065
+batch: 318
+train_loss: 204.25096476078033
+batch: 319
+train_loss: 205.86307632923126
+batch: 320
+train_loss: 207.49218022823334
+batch: 321
+train_loss: 209.16506469249725
+batch: 322
+train_loss: 210.84748780727386
+batch: 323
+train_loss: 212.47320294380188
+batch: 324
+train_loss: 214.13860893249512
+batch: 325
+train_loss: 215.75299060344696
+batch: 326
+train_loss: 217.41949915885925
+batch: 327
+train_loss: 219.0192803144455
+batch: 328
+train_loss: 220.6668803691864
+batch: 329
+train_loss: 222.26453864574432
+batch: 330
+train_loss: 223.8476766347885
+batch: 331
+train_loss: 225.48635721206665
+batch: 332
+train_loss: 227.13594913482666
+batch: 333
+train_loss: 228.7349123954773
+batch: 334
+train_loss: 230.36082649230957
+batch: 335
+train_loss: 232.01647865772247
+batch: 336
+train_loss: 233.65095806121826
+batch: 337
+train_loss: 235.33450591564178
+batch: 338
+train_loss: 236.9848473072052
+batch: 339
+train_loss: 238.61001563072205
+batch: 340
+train_loss: 240.23673105239868
+batch: 341
+train_loss: 241.8099389076233
+batch: 342
+train_loss: 243.43689274787903
+batch: 343
+train_loss: 245.0851811170578
+batch: 344
+train_loss: 246.71998476982117
+batch: 345
+train_loss: 248.36562037467957
+batch: 346
+train_loss: 249.9449713230133
+batch: 347
+train_loss: 251.51223623752594
+batch: 348
+train_loss: 253.0709352493286
+batch: 349
+train_loss: 254.60686433315277
+batch: 350
+train_loss: 256.1938123703003
+batch: 351
+train_loss: 257.8015093803406
+batch: 352
+train_loss: 259.40850698947906
+batch: 353
+train_loss: 260.9917234182358
+batch: 354
+train_loss: 262.6553189754486
+batch: 355
+train_loss: 264.2761127948761
+batch: 356
+train_loss: 265.9088046550751
+batch: 357
+train_loss: 267.4632240533829
+batch: 358
+train_loss: 269.06444907188416
+batch: 359
+train_loss: 270.6394089460373
+batch: 360
+train_loss: 272.21431255340576
+batch: 361
+slurmstepd-pink57: error: *** JOB 5999711 ON pink57 CANCELLED AT 2024-05-17T08:46:01 ***
+==============================================================================
+Running epilogue script on pink57.
+
+Submit time  : 2024-05-17T02:36:54
+Start time   : 2024-05-17T02:41:45
+End time     : 2024-05-17T08:46:01
+Elapsed time : 06:04:16 (Timelimit=08:00:00)
+
+Job ID: 5999711
+Cluster: i5
+User/Group: rc3g20/fp
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.00% of 2-00:34:08 core-walltime
+Job Wall-clock time: 06:04:16
+Memory Utilized: 19.84 GB
+Memory Efficiency: 0.00% of 16.00 B
+

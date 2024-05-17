@@ -1,0 +1,251 @@
+Running SLURM prolog script on pink57.cluster.local
+===============================================================================
+Job started on Fri May 17 08:51:46 BST 2024
+Job ID          : 5999995
+Job name        : run_enwik8_rsa_small2.sh
+WorkDir         : /mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch
+Command         : /mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch/run_enwik8_rsa_small2.sh
+Partition       : lyceum
+Num hosts       : 1
+Num cores       : 8
+Num of tasks    : 1
+Hosts allocated : pink57
+Job Output Follows ...
+===============================================================================
+Loading cached dataset...
+====================================================================================================
+    - data : ../data/enwik8/
+    - dataset : enwik8
+    - n_layer : 7
+    - n_head : 8
+    - d_head : 16
+    - d_embed : 32
+    - d_model : 32
+    - d_inner : 2048
+    - dropout : 0.1
+    - dropatt : 0.0
+    - init : normal
+    - emb_init : normal
+    - init_range : 0.1
+    - emb_init_range : 0.01
+    - init_std : 0.02
+    - proj_init_std : 0.01
+    - optim : adam
+    - lr : 0.00025
+    - mom : 0.0
+    - scheduler : cosine
+    - warmup_step : 0
+    - decay_rate : 0.5
+    - lr_min : 0.0
+    - clip : 0.25
+    - clip_nonemb : False
+    - max_step : 40000
+    - batch_size : 22
+    - batch_chunk : 1
+    - tgt_len : 512
+    - eval_tgt_len : 128
+    - ext_len : 0
+    - mem_len : 512
+    - not_tied : False
+    - seed : 1111
+    - cuda : True
+    - adaptive : False
+    - div_val : 1
+    - pre_lnorm : False
+    - varlen : False
+    - multi_gpu : True
+    - log_interval : 200
+    - eval_interval : 4000
+    - work_dir : LM-TFM
+    - restart : False
+    - restart_dir : 
+    - debug : False
+    - same_length : False
+    - attn_type : 4
+    - clamp_len : -1
+    - eta_min : 0.0
+    - gpu0_bsz : 4
+    - max_eval_steps : -1
+    - sample_softmax : -1
+    - patience : 0
+    - finetune_v2 : False
+    - finetune_v3 : False
+    - fp16 : False
+    - static_loss_scale : 1
+    - dynamic_loss_scale : False
+    - n_rsa_head : 4
+    - k_rem_indexes : [0, 0, 0, 0, 2, 2]
+    - dilated_factors : [3, 6, 9, 12]
+    - iridis : False
+    - mu_init : 1
+    - tied : True
+    - n_token : 204
+    - n_all_param : 1083336
+    - n_nonemb_param : 1076348
+====================================================================================================
+#params = 1083336
+#non emb params = 1076348
+batch: 0
+/mainfs/lyceum/rc3g20/DL_CW/transformer-xl/pytorch/mem_transformer.py:544: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525496686/work/aten/src/ATen/native/TensorAdvancedIndexing.cpp:1646.)
+  attn_mask[:,:,:,None], -float('inf')).type_as(attn_score)
+/lyceum/rc3g20/.conda/envs/transformer-xl/lib/python3.7/site-packages/torch/nn/functional.py:1967: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+/lyceum/rc3g20/.conda/envs/transformer-xl/lib/python3.7/site-packages/torch/autograd/__init__.py:199: UserWarning: masked_fill_ received a mask with dtype torch.uint8, this behavior is now deprecated,please use a mask with dtype torch.bool instead. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525496686/work/aten/src/ATen/native/TensorAdvancedIndexing.cpp:1646.)
+  allow_unreachable=True, accumulate_grad=True)  # Calls into the C++ engine to run the backward pass
+train_loss: 5.312507152557373
+/lyceum/rc3g20/.conda/envs/transformer-xl/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:163: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+batch: 1
+train_loss: 10.594468593597412
+batch: 2
+train_loss: 15.843435287475586
+batch: 3
+train_loss: 21.0882248878479
+batch: 4
+train_loss: 26.3318510055542
+batch: 5
+train_loss: 31.54808759689331
+batch: 6
+train_loss: 36.75285768508911
+batch: 7
+train_loss: 41.95139932632446
+batch: 8
+train_loss: 47.13896179199219
+batch: 9
+train_loss: 52.312304973602295
+batch: 10
+train_loss: 57.46842956542969
+batch: 11
+train_loss: 62.616485595703125
+batch: 12
+train_loss: 67.75666522979736
+batch: 13
+train_loss: 72.884774684906
+batch: 14
+train_loss: 78.00448036193848
+batch: 15
+train_loss: 83.11853551864624
+batch: 16
+train_loss: 88.22145986557007
+batch: 17
+train_loss: 93.31493616104126
+batch: 18
+train_loss: 98.40202903747559
+batch: 19
+train_loss: 103.47398376464844
+batch: 20
+train_loss: 108.53215074539185
+batch: 21
+train_loss: 113.57648754119873
+batch: 22
+train_loss: 118.61901521682739
+batch: 23
+train_loss: 123.65062713623047
+batch: 24
+train_loss: 128.66739797592163
+batch: 25
+train_loss: 133.677001953125
+batch: 26
+train_loss: 138.66811180114746
+batch: 27
+train_loss: 143.6559181213379
+batch: 28
+train_loss: 148.63267850875854
+batch: 29
+train_loss: 153.60837411880493
+batch: 30
+train_loss: 158.5691432952881
+batch: 31
+train_loss: 163.50383234024048
+batch: 32
+train_loss: 168.4288773536682
+batch: 33
+train_loss: 173.34377670288086
+batch: 34
+train_loss: 178.2399778366089
+batch: 35
+train_loss: 183.12660837173462
+batch: 36
+train_loss: 188.00355434417725
+batch: 37
+train_loss: 192.87756443023682
+batch: 38
+train_loss: 197.73708581924438
+batch: 39
+train_loss: 202.575617313385
+batch: 40
+train_loss: 207.40798473358154
+batch: 41
+train_loss: 212.22719144821167
+batch: 42
+train_loss: 217.02369737625122
+batch: 43
+train_loss: 221.80827569961548
+batch: 44
+train_loss: 226.57927751541138
+batch: 45
+train_loss: 231.3524613380432
+batch: 46
+train_loss: 236.12028312683105
+batch: 47
+train_loss: 240.88905715942383
+batch: 48
+train_loss: 245.6382393836975
+batch: 49
+train_loss: 250.38019323349
+batch: 50
+train_loss: 255.1150517463684
+batch: 51
+train_loss: 259.83313846588135
+batch: 52
+train_loss: 264.5281672477722
+batch: 53
+train_loss: 269.2329993247986
+batch: 54
+train_loss: 273.9238634109497
+batch: 55
+train_loss: 278.6081781387329
+batch: 56
+train_loss: 283.26083040237427
+batch: 57
+train_loss: 287.8970990180969
+batch: 58
+train_loss: 292.52362155914307
+batch: 59
+train_loss: 297.1481947898865
+batch: 60
+train_loss: 301.7394332885742
+batch: 61
+train_loss: 306.33313608169556
+batch: 62
+train_loss: 310.9340023994446
+batch: 63
+train_loss: 315.52662897109985
+batch: 64
+train_loss: 320.10269260406494
+batch: 65
+train_loss: 324.6657204627991
+batch: 66
+train_loss: 329.22041416168213
+batch: 67
+slurmstepd-pink57: error: *** JOB 5999995 ON pink57 CANCELLED AT 2024-05-17T09:18:42 ***
+==============================================================================
+Running epilogue script on pink57.
+
+Submit time  : 2024-05-17T08:51:43
+Start time   : 2024-05-17T08:51:46
+End time     : 2024-05-17T09:18:42
+Elapsed time : 00:26:56 (Timelimit=08:00:00)
+
+Job ID: 5999995
+Cluster: i5
+User/Group: rc3g20/fp
+State: CANCELLED (exit code 0)
+Nodes: 1
+Cores per node: 8
+CPU Utilized: 00:00:01
+CPU Efficiency: 0.01% of 03:35:28 core-walltime
+Job Wall-clock time: 00:26:56
+Memory Utilized: 11.20 GB
+Memory Efficiency: 0.00% of 16.00 B
+
