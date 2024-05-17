@@ -1,20 +1,8 @@
-#!/bin/bash -l
-#SBATCH -p lyceum
-#SBATCH --mem=32G
-#SBATCH --gres=gpu:1
-#SBATCH --nodes=1
-#SBATCH -c 8
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=rc3g20@soton.ac.uk
-#SBATCH --time=08:00:00
+#!/bin/bash
 
-
-module load conda/py3-latest
-conda activate transformer-xl
-
-
-
-python -u train.py \
+if [[ $1 == 'train' ]]; then
+    echo 'Run training...'
+    python train.py \
         --cuda \
         --data ../data/enwik8/ \
         --dataset enwik8 \
@@ -39,11 +27,10 @@ python -u train.py \
         --dilated_factors 3 6 9 12 \
         --attn_type 4 \
         --mu_init 1 \
-        --work_dir ~/xl-exp1
         ${@:2}
-
-
-python -u eval.py \
+elif [[ $1 == 'eval' ]]; then
+    echo 'Run evaluation...'
+    python eval.py \
         --cuda \
         --data ../data/enwik8/ \
         --dataset enwik8 \
@@ -52,5 +39,7 @@ python -u eval.py \
         --clamp_len 820 \
         --same_length \
         --split test \
-        --work_dir ~/xl-exp1
         ${@:2}
+else
+    echo 'unknown argment 1'
+fi

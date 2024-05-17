@@ -1,20 +1,8 @@
-#!/bin/bash -l
-#SBATCH -p lyceum
-#SBATCH --mem=32G
-#SBATCH --gres=gpu:1
-#SBATCH --nodes=1
-#SBATCH -c 8
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=rc3g20@soton.ac.uk
-#SBATCH --time=08:00:00
+#!/bin/bash
 
-
-module load conda/py3-latest
-conda activate transformer-xl
-
-
-
-python -u train.py \
+if [[ $1 == 'train' ]]; then
+    echo 'Run training...'
+    python train.py \
         --cuda \
         --data ../data/text8/ \
         --dataset text8 \
@@ -41,9 +29,9 @@ python -u train.py \
         --n_rsa_head 4 \
         --mu_init 1\
         ${@:2}
-
-
-python -u eval.py \
+elif [[ $1 == 'eval' ]]; then
+    echo 'Run evaluation...'
+    python eval.py \
         --cuda \
         --data ../data/text8/ \
         --dataset text8 \
@@ -53,6 +41,6 @@ python -u eval.py \
         --same_length \
         --split test \
         ${@:2}
-
-
-
+else
+    echo 'unknown argment 1'
+fi
